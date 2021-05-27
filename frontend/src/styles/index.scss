@@ -115,6 +115,7 @@ button:hover {
 
 .btn:hover {
   background-color: rgb(119, 119, 119);
+  color: white;
 }
 
 .btn:focus {
@@ -152,8 +153,7 @@ button:hover {
 .productSection {
   position: fixed;
   right: 0;
-  width: 40%;
-  background: red;
+  width: 80%;
 }
 
 .footer {
