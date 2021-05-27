@@ -93,11 +93,12 @@ button:hover {
 }
 
 .tabs button {
+  padding-top: 1em;
+  padding-bottom: 1em;
   border-style: none;
   font-size: 18px;
   border-left: solid 0.5px black;
   margin-bottom: 0px;
-  margin-left: 20px;
   background-color: white;
 }
 
@@ -125,8 +126,6 @@ button:hover {
   background-color: blue;
 }
 .column button {
-  display: flex;
-  flex-direction: column;
   border-style: none;
   border-bottom: solid 1px black;
   cursor: pointer;
@@ -145,6 +144,11 @@ button:hover {
   flex-direction: column;
   border-right: solid 1px black;
 }
+
+.productBtn .btn {
+  padding: 1em;
+}
+
 .productSection {
   position: fixed;
   right: 0;
