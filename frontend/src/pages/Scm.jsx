@@ -34,12 +34,10 @@ export default function Scm() {
       <div className="column">
         <div className="productBtn">
           <button class="btn" type="submit">
-            {" "}
-            Add Contents{" "}
+            Add Contents
           </button>
           <button class="btn" type="submit">
-            {" "}
-            Remove Contents{" "}
+            Remove Contents
           </button>
         </div>
       </div>
