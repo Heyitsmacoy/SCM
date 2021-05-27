@@ -1,0 +1,181 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+
+  font-family: "Poppins", sans-serif;
+  font-size: 1rem; // 16px
+}
+
+html,
+body,
+#root {
+  width: 100vw;
+  height: 100%;
+  background-color: whitesmoke;
+  //background-color: rgb(49, 49, 49);
+}
+
+#profileLogo {
+  width: 200px;
+  height: 200px;
+  padding: 5px;
+}
+
+#nameDept {
+  padding-top: 20px;
+  font-size: 30px;
+  font-weight: 500;
+  color: white;
+}
+
+.center {
+  height: 100%;
+
+  // display: flex;
+  // justify-content: center;
+  // align-items: center;
+
+  display: grid;
+  place-items: center;
+}
+
+//.column{
+/*
+  padding: 1px;
+  display: flex;
+  flex-direction: column;
+ */
+//}
+
+.loginForm {
+  height: 80vh;
+  width: 40vw;
+  display: grid;
+  place-items: center;
+  background-color: #622427;
+  border-radius: 10px;
+}
+
+input {
+  width: 35vw;
+  padding: 0.7em 0.8em;
+  border-radius: 5px;
+}
+
+button {
+  margin-bottom: 15px;
+  padding: 0.4em 1.5em;
+  border-radius: 5px;
+}
+
+button:hover {
+  cursor: pointer;
+}
+
+// Home Page //
+
+.navbar p {
+  font-size: 25px;
+}
+
+.navbar h1 {
+  font-size: 30px;
+}
+
+.tabs {
+  display: flex;
+  justify-content: flex-end;
+  background-color: rgb(255, 255, 255);
+  border-bottom: solid 1px black;
+}
+
+.tabs button {
+  border-style: none;
+  font-size: 18px;
+  border-left: solid 0.5px black;
+  margin-bottom: 0px;
+  margin-left: 20px;
+  background-color: white;
+}
+
+.tabs .btn-logout,
+.btn-logout:focus {
+  margin-left: 100px;
+  background-color: rgb(51, 51, 51);
+  color: whitesmoke;
+}
+
+.btn-logout:hover {
+  background-color: rgb(214, 93, 93);
+}
+
+.btn:hover {
+  background-color: rgb(119, 119, 119);
+}
+
+.btn:focus {
+  background-color: rgb(155, 115, 115);
+  color: white;
+}
+
+.column {
+  background-color: blue;
+}
+.column button {
+  display: flex;
+  flex-direction: column;
+  border-style: none;
+  border-bottom: solid 1px black;
+  cursor: pointer;
+}
+
+.contents {
+  background-color: blueviolet;
+}
+
+.productBtn {
+  position: fixed;
+  height: 80vh;
+  width: 20%;
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  border-right: solid 1px black;
+}
+.productSection {
+  position: fixed;
+  right: 0;
+  width: 40%;
+  background: red;
+}
+
+.footer {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  padding: 5px;
+  height: 5%;
+  width: 100%;
+  background-color: #622427;
+  color: white;
+  text-align: center;
+}
+
+.navbar {
+  display: flex;
+  background-color: #622427;
+  padding: 30px;
+  color: white;
+  font-size: 20px;
+}
+
+.Admin {
+  margin-left: 60%;
+  padding: 5px;
+  background-color: whitesmoke;
+  color: black;
+  border-radius: 5px;
+}
