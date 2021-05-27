@@ -1,0 +1,42 @@
+GET http://localhost:5000/api/products/
+
+###
+POST http://localhost:5000/api/products/create
+Content-Type: application/json
+
+{
+  "name": "product1",
+  "price": 420,
+  "quantity": 69
+}
+
+### 
+PUT http://localhost:5000/api/products/60a9eea68426f51ce4f1d278/update
+Content-Type: application/json
+
+{
+  "name": "product123",
+  "price": 421,
+  "quantity": 69
+}
+
+###
+DELETE http://localhost:5000/api/products/60a9eea68426f51ce4f1d278/delete
+
+###
+POST http://localhost:5000/api/user/create
+Content-Type: application/json
+
+{
+  "name": "admin",
+  "password": "admin"
+}
+
+###
+POST http://localhost:5000/api/user/login
+Content-Type: application/json
+
+{
+  "name": "admin",
+  "password": "admin"
+}
