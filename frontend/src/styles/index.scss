@@ -124,8 +124,10 @@ button:hover {
 }
 
 .column {
-  background-color: blue;
+  background-color: none;
+  
 }
+
 .column button {
   border-style: none;
   border-bottom: solid 1px black;
@@ -182,4 +184,67 @@ button:hover {
   background-color: whitesmoke;
   color: black;
   border-radius: 5px;
+}
+
+// Tables
+.table {
+  display: table;
+  width: 100%;
+  height: 50%;
+  tr:nth-child(even) {
+    background-color: #f2f2f2;
+  }
+
+  tbody {
+    display: block;
+    max-height: 300px;
+    overflow-y: scroll;
+  }
+
+  .row {
+    width: 100%;
+    display: table-row;
+
+    display: flex;
+    justify-content: space-between;
+
+    border: 1px solid white;
+  }
+
+  .column {
+    width: 100%;
+
+    display: table-cell;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    padding: 10px 5px;
+
+    & > button {
+      margin: 0 5px;
+    }
+  }
+
+  .search {
+    height: 5vh;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    margin-bottom: 2rem;
+
+    input {
+      background: none;
+      border: none;
+      outline: none;
+
+      width: 20rem;
+
+      padding: 1rem;
+      color: black;
+
+      background-color: #e5e5e5;
+    }
+  }
 }
