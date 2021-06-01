@@ -17,6 +17,7 @@ export default function ProductsTabData() {
 
   return (
     <div>
+      <h2>{data && data.message}</h2>
       <h1>PRODUCTS</h1>
       <div className="table">
         <div className="search">
@@ -40,6 +41,9 @@ export default function ProductsTabData() {
           </div>
           <div className="column">
             <h3>Quantity</h3>
+          </div>
+          <div className="column">
+            <h3>Action</h3>
           </div>
         </div>
         <tbody>
@@ -66,6 +70,16 @@ export default function ProductsTabData() {
             </div>
             <div className="column">
               <p>{product.quantity}</p>
+            </div>
+            <div className="column">
+            <button id="action-button"
+                className="outline-primary"
+                onClick={async () => {
+                  await axios.delete(`/api/products/${product._id}/delete`);
+                }}
+              >
+                delete
+              </button>
             </div>
           </div>
         ))}</tbody>

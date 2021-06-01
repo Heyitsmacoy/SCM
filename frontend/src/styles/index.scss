@@ -227,6 +227,16 @@ button:hover {
     }
   }
 
+  #action-button {
+    border-bottom: 0;
+  }
+  
+  #action-button:hover {
+    background-color: red;
+    color: white;
+    animation-duration: 5s;
+  }
+
   .search {
     height: 5vh;
     display: flex;
