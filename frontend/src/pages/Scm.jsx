@@ -1,8 +1,11 @@
 import React, { useState } from "react";
 import { useHistory } from "react-router-dom";
 
-import Products from "../components/Products";
 import ProductForm from "../components/ProductForm";
+import HomeTab from "../components/HomeTab";
+import ProductsTab from "../components/ProductsTab";
+import OrdersTab from "../components/OrdersTab";
+import InvoicesTab from "../components/InvoicesTab";
 
 export default function Scm() {
   const [component, setComponent] = useState(0);
@@ -18,13 +21,13 @@ export default function Scm() {
         <button onClick={() => setComponent(0)} class="btn" type="submit">
           Home
         </button>
-        <button class="btn" type="submit">
+        <button onClick={() => setComponent(1)} class="btn" type="submit">
           Products
         </button>
-        <button class="btn" type="submit">
+        <button onClick={() => setComponent(2)} class="btn" type="submit">
           Orders
         </button>
-        <button class="btn" type="submit">
+        <button onClick={() => setComponent(3)} class="btn" type="submit">
           Invoices
         </button>
         <button
@@ -37,7 +40,7 @@ export default function Scm() {
       </div>
       <div className="column">
         <div className="productBtn">
-          <button onClick={() => setComponent(1)} class="btn" type="submit">
+          <button onClick={() => setComponent(4)} class="btn" type="submit">
             Add Contents
           </button>
           <button class="btn" type="submit">
@@ -48,7 +51,14 @@ export default function Scm() {
       <div className="contents">
         <div className="productSection">
           <div>
-            <div>{component === 0 ? <Products /> : <ProductForm />}</div>
+            <div>{
+              component === 0 ? <HomeTab /> :
+              component === 1 ? <ProductsTab /> :
+              component === 2 ? <OrdersTab /> :
+              component === 3 ? <InvoicesTab /> :
+              component === 4 ? <ProductForm /> :
+              <HomeTab />
+            }</div>
           </div>
         </div>
       </div>
