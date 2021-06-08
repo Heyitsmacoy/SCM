@@ -222,19 +222,26 @@ button:hover {
 
     padding: 10px 5px;
 
-    & > button {
+    button {
       margin: 0 5px;
+      border-bottom: 0;
     }
   }
 
-  #action-button {
-    border-bottom: 0;
+  #edit-button:hover {
+    background-color: green;
+    color: white;
   }
-  
-  #action-button:hover {
+
+  #delete-button:hover {
     background-color: red;
     color: white;
-    animation-duration: 5s;
+  }
+
+  #action-padding {
+    display: flex;
+    align-items: center;
+    justify-content: center;
   }
 
   .search {
