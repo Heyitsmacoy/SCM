@@ -50,6 +50,20 @@ router.get("/", async (req, res) => {
   }
 });
 
+// Get product data
+
+router.get("/:id", async (req, res) => {
+  try {
+    // findById(:id) function on User model to return user data
+    const product = await Product.findById(req.params.id);
+
+    // send data as json
+    res.json(product);
+  } catch (error) {
+    res.status(500).json({ message: `${error}` });
+  }
+});
+
 // Update => /api/products/:id/update
 
 router.put("/:id/update", async (req, res) => {

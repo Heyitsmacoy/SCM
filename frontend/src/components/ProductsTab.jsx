@@ -2,6 +2,7 @@ import React, { useState } from "react";
 
 import { useQuery } from "react-query";
 import axios from "axios";
+import { Link } from "react-router-dom";
 
 export default function ProductsTabData() {
   const { data, isLoading } = useQuery(["products"], async () => {
@@ -71,8 +72,11 @@ export default function ProductsTabData() {
             <div className="column">
               <p>{product.quantity}</p>
             </div>
-            <div className="column">
-            <button id="action-button"
+            <div className="column" id="action-padding">
+              <Link to={`/editproduct/${product._id}`}>
+                <button id="edit-button" className="outline-primary">edit</button>
+              </Link>
+              <button id="delete-button"
                 className="outline-primary"
                 onClick={async () => {
                   await axios.delete(`/api/products/${product._id}/delete`);

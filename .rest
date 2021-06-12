@@ -1,6 +1,11 @@
 GET http://localhost:5000/api/products/
 
 ###
+
+GET http://localhost:5000/api/products/60b67afbe9038e237c104507
+
+###
+
 POST http://localhost:5000/api/products/create
 Content-Type: application/json
 
