@@ -3,8 +3,17 @@
 export const validateEditProduct = (values) => {
   let errors = {};
 
-  if (!values.name) {
-    errors.name = "Product name is required";
+  if (!values.productId) {
+    errors.productId = "ID is required";
+  }
+  if (!values.productName) {
+    errors.productName = "Product name is required";
+  }
+  if (!values.category) {
+    errors.category = "Category is required";
+  }
+  if (!values.supplier) {
+    errors.supplier = "Supplier is required";
   }
   if (!values.price) {
     errors.price = "Price is required";

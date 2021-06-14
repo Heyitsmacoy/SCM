@@ -32,10 +32,16 @@ export default function ProductsTabData() {
         </div>
         <div className="row">
           <div className="column">
-            <h3>#</h3>
+            <h3>Product ID</h3>
           </div>
           <div className="column">
             <h3>Product Name</h3>
+          </div>
+          <div className="column">
+            <h3>Category</h3>
+          </div>
+          <div className="column">
+            <h3>Supplier</h3>
           </div>
           <div className="column">
             <h3>Price</h3>
@@ -53,7 +59,7 @@ export default function ProductsTabData() {
           if (searchTerm === "") {
             return product;
           } else if (
-            product.name.toLowerCase().includes(searchTerm.toLowerCase())
+            product.productName.toLowerCase().includes(searchTerm.toLowerCase())
           ) {
             return product;
           }
@@ -61,10 +67,16 @@ export default function ProductsTabData() {
         .map((product, index) => (
           <div key={index} className="row">
             <div className="column">
-              <p>{index+1}</p>
+              <p>{product.productId}</p>
             </div>
             <div className="column">
-              <p>{product.name}</p>
+              <p>{product.productName}</p>
+            </div>
+            <div className="column">
+              <p>{product.category}</p>
+            </div>
+            <div className="column">
+              <p>{product.supplier}</p>
             </div>
             <div className="column">
               <p>{product.price}</p>
