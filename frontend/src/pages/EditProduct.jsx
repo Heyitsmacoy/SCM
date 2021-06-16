@@ -61,16 +61,55 @@ const ProductEditForm = ({ match }) => {
           <form className="form" onSubmit={handleSubmit}>
             <div className="form-group">
               <div className="form-field">
+                <label className="form-label">ID:</label>
+                <input
+                  onChange={handleChange}
+                  type="text"
+                  name="productId"
+                  className="form-input"
+                  value={values.productId || ""}
+                />
+                {(errors.productId || errors.message) && (
+                  <pre>{errors.productId || errors.message}</pre>
+                )}
+              </div>
+              <div className="form-field">
                 <label className="form-label">Name:</label>
                 <input
                   onChange={handleChange}
                   type="text"
-                  name="name"
+                  name="productName"
                   className="form-input"
-                  value={values.name || ""}
+                  value={values.productName || ""}
                 />
-                {(errors.name || errors.message) && (
-                  <pre>{errors.name || errors.message}</pre>
+                {(errors.productName || errors.message) && (
+                  <pre>{errors.productName || errors.message}</pre>
+                )}
+              </div>
+              <div className="form-field">
+                <label className="form-label">Category:</label>
+                <input
+                  onChange={handleChange}
+                  type="text"
+                  name="category"
+                  className="form-input"
+                  value={values.category || ""}
+                />
+                {(errors.category || errors.message) && (
+                  <pre>{errors.category || errors.message}</pre>
+                )}
+              </div>
+              <div className="form-field">
+                <label className="form-label">Supplier:</label>
+                <input
+                  onChange={handleChange}
+                  type="text"
+                  name="supplier"
+                  className="form-input"
+                  value={values.supplier || ""}
+                />
+                {(errors.supplier || errors.message) && (
+                  <pre>{errors.supplier || errors.message}</pre>
                 )}
               </div>
               <div className="form-field">

@@ -5,7 +5,10 @@ import axios from "axios";
 
 export default function ProductForm() {
   const [data, setData] = useState({
+    id: "",
     name: "",
+    category: "",
+    supplier: "",
     price: 0,
     quantity: 0,
   });
@@ -37,8 +40,20 @@ export default function ProductForm() {
       <h2>{res && res.message}</h2>
       <form onSubmit={handleSubmit}>
         <div>
+          <label>ID: </label>
+          <input type="text" name="productId" onChange={handleChange} />
+        </div>
+        <div>
           <label>Name: </label>
-          <input type="text" name="name" onChange={handleChange} />
+          <input type="text" name="productName" onChange={handleChange} />
+        </div>
+        <div>
+          <label>Category: </label>
+          <input type="text" name="category" onChange={handleChange} />
+        </div>
+        <div>
+          <label>Supplier: </label>
+          <input type="text" name="supplier" onChange={handleChange} />
         </div>
         <div>
           <label>Price: </label>
