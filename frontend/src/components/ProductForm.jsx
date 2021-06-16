@@ -63,7 +63,7 @@ export default function ProductForm() {
           <label>Quantity: </label>
           <input type="number" name="quantity" onChange={handleChange} />
         </div>
-        <div>
+        <div className="AddproductBtn">
           <button type="submit">Add Product</button>
         </div>
       </form>

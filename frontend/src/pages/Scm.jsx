@@ -51,14 +51,21 @@ export default function Scm() {
       <div className="contents">
         <div className="productSection">
           <div>
-            <div>{
-              component === 0 ? <HomeTab /> :
-              component === 1 ? <ProductsTab /> :
-              component === 2 ? <OrdersTab /> :
-              component === 3 ? <InvoicesTab /> :
-              component === 4 ? <ProductForm /> :
-              <HomeTab />
-            }</div>
+            <div>
+              {component === 0 ? (
+                <HomeTab />
+              ) : component === 1 ? (
+                <ProductsTab />
+              ) : component === 2 ? (
+                <OrdersTab />
+              ) : component === 3 ? (
+                <InvoicesTab />
+              ) : component === 4 ? (
+                <ProductForm />
+              ) : (
+                <HomeTab />
+              )}
+            </div>
           </div>
         </div>
       </div>

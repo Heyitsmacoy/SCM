@@ -19,7 +19,7 @@ export default function ProductsTabData() {
   return (
     <div>
       <h2>{data && data.message}</h2>
-      <h1>PRODUCTS</h1>
+      <h1 className="ProductTabTitle">PRODUCTS</h1>
       <div className="table">
         <div className="search">
           <input
@@ -54,51 +54,57 @@ export default function ProductsTabData() {
           </div>
         </div>
         <tbody>
-        {data
-        .filter((product) => {
-          if (searchTerm === "") {
-            return product;
-          } else if (
-            product.productName.toLowerCase().includes(searchTerm.toLowerCase())
-          ) {
-            return product;
-          }
-        })
-        .map((product, index) => (
-          <div key={index} className="row">
-            <div className="column">
-              <p>{product.productId}</p>
-            </div>
-            <div className="column">
-              <p>{product.productName}</p>
-            </div>
-            <div className="column">
-              <p>{product.category}</p>
-            </div>
-            <div className="column">
-              <p>{product.supplier}</p>
-            </div>
-            <div className="column">
-              <p>{product.price}</p>
-            </div>
-            <div className="column">
-              <p>{product.quantity}</p>
-            </div>
-            <div className="column" id="action-padding">
-              <Link to={`/editproduct/${product._id}`}>
-                <button id="edit-button" className="outline-primary">edit</button>
-              </Link>
-              <button id="delete-button"
-                className="outline-primary"
-                onClick={async () => {
-                  await axios.delete(`/api/products/${product._id}/delete`);
-                }}
-              >
-                delete
-              </button>
-            </div>
-          </div>
-        ))}</tbody>
+          {data
+            .filter((product) => {
+              if (searchTerm === "") {
+                return product;
+              } else if (
+                product.productName
+                  .toLowerCase()
+                  .includes(searchTerm.toLowerCase())
+              ) {
+                return product;
+              }
+            })
+            .map((product, index) => (
+              <div key={index} className="row">
+                <div className="column">
+                  <p>{product.productId}</p>
+                </div>
+                <div className="column">
+                  <p>{product.productName}</p>
+                </div>
+                <div className="column">
+                  <p>{product.category}</p>
+                </div>
+                <div className="column">
+                  <p>{product.supplier}</p>
+                </div>
+                <div className="column">
+                  <p>{product.price}</p>
+                </div>
+                <div className="column">
+                  <p>{product.quantity}</p>
+                </div>
+                <div className="column" id="action-padding">
+                  <Link to={`/editproduct/${product._id}`}>
+                    <button id="edit-button" className="outline-primary">
+                      edit
+                    </button>
+                  </Link>
+                  <button
+                    id="delete-button"
+                    className="outline-primary"
+                    onClick={async () => {
+                      await axios.delete(`/api/products/${product._id}/delete`);
+                    }}
+                  >
+                    delete
+                  </button>
+                </div>
+              </div>
+            ))}
+        </tbody>
       </div>
     </div>
   );

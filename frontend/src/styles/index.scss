@@ -60,9 +60,13 @@ body,
 }
 
 input {
+  margin: 5px;
+  margin-left: 40px;
   width: 35vw;
   padding: 0.7em 0.8em;
   border-radius: 5px;
+  display: grid;
+  place-items: center;
 }
 
 button {
@@ -73,6 +77,25 @@ button {
 
 button:hover {
   cursor: pointer;
+}
+
+label {
+  margin-left: 40px;
+}
+
+.AddproductBtn {
+  margin-left: 27.5%;
+  position: fixed;
+  height: 100vh;
+  width: 10%;
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+}
+
+.AddproductBtn button:hover {
+  background-color: maroon;
+  color: white;
 }
 
 // Home Page //
@@ -125,7 +148,6 @@ button:hover {
 
 .column {
   background-color: none;
-  
 }
 
 .column button {
@@ -162,7 +184,7 @@ button:hover {
   position: fixed;
   left: 0;
   bottom: 0;
-  padding: 5px;
+  padding: 10px;
   height: 5%;
   width: 100%;
   background-color: #622427;
@@ -245,18 +267,19 @@ button:hover {
   }
 
   .search {
-    height: 5vh;
+    height: 1vh;
     display: flex;
     justify-content: flex-end;
     align-items: center;
     margin-bottom: 2rem;
 
     input {
+      margin-bottom: 5px;
       background: none;
       border: none;
       outline: none;
 
-      width: 20rem;
+      width: 30rem;
 
       padding: 1rem;
       color: black;
@@ -265,3 +288,9 @@ button:hover {
     }
   }
 }
+
+.ProductTabTitle {
+  margin: 50px 0px 0px 50px;
+  font-size: 40px;
+}
+// Forms //
