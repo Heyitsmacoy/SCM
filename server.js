@@ -7,6 +7,7 @@ import "dotenv/config";
 // API routes
 import productRoute from "./routes/products";
 import userRoute from "./routes/user";
+import orderRoute from "./routes/order";
 
 const app = express(); // initialize server
 
@@ -19,6 +20,7 @@ app.use(express.urlencoded({ limit: "50mb", extended: true })); // cross-site re
 // initialize APIs
 app.use("/api/products", productRoute);
 app.use("/api/user", userRoute);
+app.use("/api/order", orderRoute);
 
 // initialize database
 mongoose.connect(

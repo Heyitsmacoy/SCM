@@ -25,6 +25,7 @@ export default function ProductsTabData() {
     if (string == "false") {
       return "Undelivered";
     } else return "Delivered";
+
   }
 
   return (
@@ -64,6 +65,10 @@ export default function ProductsTabData() {
             <h3>
               Shipping <br /> Status
             </h3>
+            <h3>Price</h3>
+          </div>
+          <div className="column">
+            <h3>Status</h3>
           </div>
           <div className="column">
             <h3>User</h3>
@@ -86,9 +91,7 @@ export default function ProductsTabData() {
               if (searchTerm === "") {
                 return order;
               } else if (
-                order.orderItems[0].name
-                  .toLowerCase()
-                  .includes(searchTerm.toLowerCase())
+                order.orderItems[0].name.toLowerCase().includes(searchTerm.toLowerCase())
               ) {
                 return order;
               }

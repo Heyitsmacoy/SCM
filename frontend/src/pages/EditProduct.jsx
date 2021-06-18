@@ -22,6 +22,7 @@ const ProductEditForm = ({ match }) => {
   } = useForm(register, validateEditProduct);
 
   const [] = useState({});
+
   //useHistory for pages
   const history = useHistory();
 

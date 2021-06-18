@@ -58,9 +58,7 @@ export default function ProductsTabData() {
               if (searchTerm === "") {
                 return order;
               } else if (
-                order.orderItems[0].name
-                  .toLowerCase()
-                  .includes(searchTerm.toLowerCase())
+                order.orderItems[0].name.toLowerCase().includes(searchTerm.toLowerCase())
               ) {
                 return order;
               }
