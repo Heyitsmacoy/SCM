@@ -243,8 +243,9 @@ label {
     padding: 10px 5px;
 
     button {
-      margin: 0 5px;
-      border-bottom: 0;
+      font-size: 0.8rem;
+      margin: 0 1px;
+      border-bottom: 1;
     }
   }
 
@@ -341,7 +342,21 @@ label {
   color: white;
 }
 
-#invoices-content{
+#invoices-content {
   display: flex;
   flex-direction: column;
 }
+
+// Invoices //
+
+.column h3 {
+  font-size: 14px;
+  text-align: center;
+}
+
+.row p {
+  font-size: 10px;
+  text-align: center;
+}
+
+// Product Btn //
