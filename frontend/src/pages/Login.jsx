@@ -6,7 +6,7 @@ import { useHistory } from "react-router-dom";
 
 export default function Login() {
   const [data, setData] = useState({
-    name: "",
+    email: "",
     password: "",
   });
 
@@ -28,26 +28,25 @@ export default function Login() {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-
-    await login(data);
-
-    localStorage.setItem("token", res);
-
-    history.push("/scm");
-
-    e.target.reset();
+    if (await login(data)) {
+      localStorage.setItem("token", res);
+      history.push("/scm");
+      e.target.reset();
+    } else {
+      console.log("error");
+    }
   };
 
   return (
     <div className="center">
       <form className="loginForm" onSubmit={handleSubmit}>
         <h1 id="nameDept">Supply Chain Management</h1>
-        <img id="profileLogo" src={icon}></img>
+        <img id="profileLogo" src={icon} alt="logo"></img>
         <div className="">
           <input
             type="text"
-            name="name"
-            placeholder="Username"
+            name="email"
+            placeholder="Email"
             onChange={handleChange}
           />
         </div>

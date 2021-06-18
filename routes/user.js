@@ -24,16 +24,25 @@ router.post("/create", async (req, res) => {
 
 router.post("/login", async (req, res) => {
   try {
-    const { name } = req.body;
+    const { email, password } = req.body;
 
     // if no duplicate
-    const user = await userModel.findOne({ name });
+    const user = await userModel.findOne({ email });
 
     // return product
     if (!user) return res.status(400).json({ message: "User not found" });
 
-    if (!(await bycrypt.compare(req.body.password, user.password)))
-      return res.status(400).json({ message: "Incorrect password" });
+    if (user && (await user.matchPassword(password))) {
+      res.json({
+        _id: user._id,
+        name: user.name,
+        email: user.email,
+        isAdmin: user.isAdmin,
+      });
+    } else {
+      res.status(401);
+      throw new Error("Invalid email or password");
+    }
 
     const token = jwt.sign({ id: user._id }, process.env.JWT_SECRET);
 

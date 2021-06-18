@@ -3,8 +3,12 @@ import { Schema, model } from "mongoose";
 const productSchema = new Schema(
   {
     name: String,
+    productId: String,
+    name: String,
+    category: String,
+    supplier: String,
     price: Number,
-    quantity: Number,
+    countInStock: Number,
 
     // orderId
   },
