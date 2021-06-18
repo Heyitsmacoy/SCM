@@ -54,57 +54,64 @@ export default function ProductsTabData() {
           </div>
         </div>
         <tbody>
-          {data
-            .filter((product) => {
-              if (searchTerm === "") {
-                return product;
-              } else if (
-                product.name.toLowerCase().includes(searchTerm.toLowerCase()) ||
-                product.category
-                  .toLowerCase()
-                  .includes(searchTerm.toLowerCase())
-              ) {
-                return product;
-              }
-            })
-            .map((product, index) => (
-              <div key={index} className="row">
-                <div className="column">
-                  <p>{product.description}</p>
-                </div>
-                <div className="column">
-                  <p>{product.name}</p>
-                </div>
-                <div className="column">
-                  <p>{product.category}</p>
-                </div>
-                <div className="column">
-                  <p>{product.brand}</p>
-                </div>
-                <div className="column">
-                  <p>{product.price}</p>
-                </div>
-                <div className="column">
-                  <p>{product.countInStock}</p>
-                </div>
-                <div className="column" id="action-padding">
-                  <Link to={`/editproduct/${product._id}`}>
-                    <button id="edit-button" className="outline-primary">
-                      Edit
+          {!isLoading &&
+            data
+              .filter((product) => {
+                if (searchTerm === "") {
+                  return product;
+                } else if (
+                  product.name
+                    .toLowerCase()
+                    .includes(searchTerm.toLowerCase()) ||
+                  product.category
+                    .toLowerCase()
+                    .includes(searchTerm.toLowerCase())
+                ) {
+                  return product;
+                }
+              })
+              .map((product, index) => (
+                <div key={index} className="row">
+                  <div className="column">
+                    <p>{product.description}</p>
+                  </div>
+                  <div className="column">
+                    <p>{product.name}</p>
+                  </div>
+                  <div className="column">
+                    <p>{product.category}</p>
+                  </div>
+                  <div className="column">
+                    <p>{product.brand}</p>
+                  </div>
+                  <div className="column">
+                    <p>{product.price}</p>
+                  </div>
+                  <div className="column">
+                    <p>{product.countInStock}</p>
+                  </div>
+                  <div className="column" id="action-padding">
+                    <Link to={`/editproduct/${product._id}`}>
+                      <button id="edit-button" className="outline-primary">
+                        Edit
+                      </button>
+                    </Link>
+                    <button
+                      id="delete-button"
+                      className="outline-primary"
+                      onClick={async () => {
+                        if (window.confirm("Are you sure")) {
+                          await axios.delete(
+                            `/api/products/${product._id}/delete`
+                          );
+                        }
+                      }}
+                    >
+                      Delete
                     </button>
-                  </Link>
-                  <button
-                    id="delete-button"
-                    className="outline-primary"
-                    onClick={async () => {
-                      await axios.delete(`/api/products/${product._id}/delete`);
-                    }}
-                  >
-                    Delete
-                  </button>
+                  </div>
                 </div>
-              </div>
-            ))}
+              ))}
         </tbody>
       </div>
     </div>

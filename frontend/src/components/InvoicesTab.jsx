@@ -15,18 +15,17 @@ export default function ProductsTabData() {
 
   if (isLoading) return <div>Loading...</div>;
 
-  function paid(string){
-    if(string == "false") {
+  function paid(string) {
+    if (string == "false") {
       return "Unpaid";
-    }
-    else return "Paid";
+    } else return "Paid";
   }
 
-  function delivered(string){
-    if(string == "false") {
+  function delivered(string) {
+    if (string == "false") {
       return "Undelivered";
-    }
-    else return "Delivered";
+    } else return "Delivered";
+
   }
 
   return (
@@ -48,6 +47,24 @@ export default function ProductsTabData() {
             <h3>Order</h3>
           </div>
           <div className="column">
+            <h3>
+              Product <br /> Name
+            </h3>
+          </div>
+          <div className="column">
+            <h3>
+              Total <br /> Price
+            </h3>
+          </div>
+          <div className="column">
+            <h3>
+              Payment <br /> Status
+            </h3>
+          </div>
+          <div className="column">
+            <h3>
+              Shipping <br /> Status
+            </h3>
             <h3>Price</h3>
           </div>
           <div className="column">
@@ -60,7 +77,9 @@ export default function ProductsTabData() {
             <h3>Address</h3>
           </div>
           <div className="column">
-            <h3>Payment Method</h3>
+            <h3>
+              Payment <br /> Method
+            </h3>
           </div>
           <div className="column">
             <h3>Date</h3>
@@ -68,34 +87,30 @@ export default function ProductsTabData() {
         </div>
         <tbody>
           {data
-            /*.filter((order) => {
+            .filter((order) => {
               if (searchTerm === "") {
                 return order;
               } else if (
-                order.name.toLowerCase().includes(searchTerm.toLowerCase())
-                  .toLowerCase()
-                  .includes(searchTerm.toLowerCase())
+                order.orderItems[0].name.toLowerCase().includes(searchTerm.toLowerCase())
               ) {
                 return order;
               }
-            })*/
+            })
             .map((order, index) => (
               <div key={index} className="row">
                 <div className="column" id="invoices-content">
-                  <p>Order ID</p>
                   <p>{order._id}</p>
-                  <p>Product Name:</p>
+                </div>
+                <div className="column" id="invoices-content">
                   <p>{order.orderItems[0].name}</p>
                 </div>
                 <div className="column" id="invoices-content">
-                  <p>Price: {order.orderItems[0].price}</p>
-                  <p>Quantity: {order.orderItems[0].qty}</p>
-                  <p>Tax: {order.taxPrice}</p>
-                  <p>Shipping: {order.shippingPrice}</p>
-                  <p>Total: {order.totalPrice}</p>
+                  <p>{order.totalPrice}</p>
                 </div>
                 <div className="column" id="invoices-content">
                   <p>{paid(order.isPaid.toString())}</p>
+                </div>
+                <div className="column" id="invoices-content">
                   <p>{delivered(order.isDelivered.toString())}</p>
                 </div>
                 <div className="column" id="invoices-content">
@@ -103,9 +118,6 @@ export default function ProductsTabData() {
                 </div>
                 <div className="column" id="invoices-content">
                   <p>{order.shippingAddress[0].address}</p>
-                  <p>{order.shippingAddress[0].city}</p>
-                  <p>{order.shippingAddress[0].postalCode}</p>
-                  <p>{order.shippingAddress[0].country}</p>
                 </div>
                 <div className="column" id="invoices-content">
                   <p>{order.paymentMethod}</p>

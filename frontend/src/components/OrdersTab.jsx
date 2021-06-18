@@ -15,11 +15,10 @@ export default function ProductsTabData() {
 
   if (isLoading) return <div>Loading...</div>;
 
-  function simplify(string){
-    if(string == "false") {
+  function simplify(string) {
+    if (string == "false") {
       return "No";
-    }
-    else return "Yes";
+    } else return "Yes";
   }
 
   return (
@@ -55,17 +54,15 @@ export default function ProductsTabData() {
         </div>
         <tbody>
           {data
-            /*.filter((order) => {
+            .filter((order) => {
               if (searchTerm === "") {
                 return order;
               } else if (
-                order.name.toLowerCase().includes(searchTerm.toLowerCase())
-                  .toLowerCase()
-                  .includes(searchTerm.toLowerCase())
+                order.orderItems[0].name.toLowerCase().includes(searchTerm.toLowerCase())
               ) {
                 return order;
               }
-            })*/
+            })
             .map((order, index) => (
               <div key={index} className="row">
                 <div className="column">

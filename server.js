@@ -33,9 +33,9 @@ mongoose.connect(
   },
   () => {
     // start server if successfully connected to db
-    app.listen(process.env.PORT || 5000, () => {
+    app.listen(5000, () => {
       // server started
-      console.log(`Server is running at port ${process.env.PORT || 5000}`);
+      console.log(`Server is running at port 5000`);
     });
   }
 );

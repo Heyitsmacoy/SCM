@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useState, useEffect } from "react";
 import axios from "axios";
 import { useHistory } from "react-router-dom";
 import { useQuery } from "react-query";
@@ -20,6 +20,8 @@ const ProductEditForm = ({ match }) => {
     handleSubmit,
     isSubmitting,
   } = useForm(register, validateEditProduct);
+
+  const [] = useState({});
 
   //useHistory for pages
   const history = useHistory();
@@ -129,8 +131,8 @@ const ProductEditForm = ({ match }) => {
                 <label className="form-label">Quantity:</label>
                 <input
                   onChange={handleChange}
-                  type="text"
-                  name="quantity"
+                  type="number"
+                  name="countInStock"
                   className="form-input"
                   value={values.countInStock || ""}
                 />
