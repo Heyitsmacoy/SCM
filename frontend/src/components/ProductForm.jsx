@@ -8,9 +8,9 @@ export default function ProductForm() {
     id: "",
     name: "",
     category: "",
-    supplier: "",
+    brand: "",
     price: 0,
-    quantity: 0,
+    countInStock: 0,
   });
 
   const { mutateAsync: addProduct, data: res } = useMutation(async () => {
@@ -41,11 +41,11 @@ export default function ProductForm() {
       <form onSubmit={handleSubmit}>
         <div>
           <label>ID: </label>
-          <input type="text" name="productId" onChange={handleChange} />
+          <input type="text" name="description" onChange={handleChange} />
         </div>
         <div>
           <label>Name: </label>
-          <input type="text" name="productName" onChange={handleChange} />
+          <input type="text" name="name" onChange={handleChange} />
         </div>
         <div>
           <label>Category: </label>
@@ -53,7 +53,7 @@ export default function ProductForm() {
         </div>
         <div>
           <label>Supplier: </label>
-          <input type="text" name="supplier" onChange={handleChange} />
+          <input type="text" name="brand" onChange={handleChange} />
         </div>
         <div>
           <label>Price: </label>
@@ -61,7 +61,7 @@ export default function ProductForm() {
         </div>
         <div>
           <label>Quantity: </label>
-          <input type="number" name="quantity" onChange={handleChange} />
+          <input type="number" name="countInStock" onChange={handleChange} />
         </div>
         <div className="AddproductBtn">
           <button type="submit">Add Product</button>
