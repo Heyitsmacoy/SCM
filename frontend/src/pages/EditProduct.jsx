@@ -4,6 +4,7 @@ import { useHistory } from "react-router-dom";
 import { useQuery } from "react-query";
 
 import useForm from "../components/hooks/useForm";
+//import SCM from "../pages/Scm";
 
 import { validateEditProduct } from "../Utils/FormValidation";
 
@@ -53,9 +54,8 @@ const ProductEditForm = ({ match }) => {
   return (
     <div>
       <div className="dashboard-title">
-        <h2>Product Edit Page</h2>
+        <h2> Toy Storey : Product Edit </h2>
       </div>
-
       <div className="dashboard-component">
         <div className="admin-form">
           <form className="form" onSubmit={handleSubmit}>
@@ -67,10 +67,10 @@ const ProductEditForm = ({ match }) => {
                   type="text"
                   name="productId"
                   className="form-input"
-                  value={values.productId || ""}
+                  value={values.description || ""}
                 />
-                {(errors.productId || errors.message) && (
-                  <pre>{errors.productId || errors.message}</pre>
+                {(errors.description || errors.message) && (
+                  <pre>{errors.description || errors.message}</pre>
                 )}
               </div>
               <div className="form-field">
@@ -80,10 +80,10 @@ const ProductEditForm = ({ match }) => {
                   type="text"
                   name="productName"
                   className="form-input"
-                  value={values.productName || ""}
+                  value={values.name || ""}
                 />
-                {(errors.productName || errors.message) && (
-                  <pre>{errors.productName || errors.message}</pre>
+                {(errors.name || errors.message) && (
+                  <pre>{errors.name || errors.message}</pre>
                 )}
               </div>
               <div className="form-field">
@@ -106,10 +106,10 @@ const ProductEditForm = ({ match }) => {
                   type="text"
                   name="supplier"
                   className="form-input"
-                  value={values.supplier || ""}
+                  value={values.brand || ""}
                 />
-                {(errors.supplier || errors.message) && (
-                  <pre>{errors.supplier || errors.message}</pre>
+                {(errors.brand || errors.message) && (
+                  <pre>{errors.brand || errors.message}</pre>
                 )}
               </div>
               <div className="form-field">
@@ -132,23 +132,26 @@ const ProductEditForm = ({ match }) => {
                   type="text"
                   name="quantity"
                   className="form-input"
-                  value={values.quantity || ""}
+                  value={values.countInStock || ""}
                 />
-                {(errors.quantity || errors.message) && (
-                  <pre>{errors.quantity || errors.message}</pre>
+                {(errors.countInStock || errors.message) && (
+                  <pre>{errors.countInStock || errors.message}</pre>
                 )}
               </div>
               <div className="form-field">
-              <button
-                disabled={isSubmitting}
-                className="primary createBtn"
-                type="submit"
-              >
-                Update
-              </button>
+                <button
+                  disabled={isSubmitting}
+                  className="primary updateBtn"
+                  type="submit"
+                >
+                  Update
+                </button>
               </div>
             </div>
           </form>
+        </div>
+        <div className="footer">
+          <h3>Supply Chain Management for Toy Storey Products.</h3>
         </div>
       </div>
     </div>

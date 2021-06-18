@@ -63,7 +63,7 @@ input {
   margin: 5px;
   margin-left: 40px;
   width: 35vw;
-  padding: 0.7em 0.8em;
+  padding: 7px;
   border-radius: 5px;
   display: grid;
   place-items: center;
@@ -84,11 +84,9 @@ label {
 }
 
 .AddproductBtn {
-  margin-left: 27.5%;
+  margin-left: 27.3%;
   position: fixed;
-  height: 100vh;
-  width: 10%;
-  padding: 10px;
+  padding: 5px;
   display: flex;
   flex-direction: column;
 }
@@ -209,10 +207,11 @@ label {
 }
 
 // Tables
+
 .table {
   display: table;
   width: 100%;
-  height: 50%;
+  height: auto;
   tr:nth-child(even) {
     background-color: #f2f2f2;
   }
@@ -293,4 +292,53 @@ label {
   margin: 50px 0px 0px 50px;
   font-size: 40px;
 }
-// Forms //
+
+// Home Page //
+
+.scmImg {
+  width: 80vw;
+  height: 75vh;
+}
+
+// Edit Page //
+
+.dashboard-title {
+  height: 10vh;
+  width: 100vw;
+  background-color: #622427;
+  color: white;
+  border-bottom: 1px solid black;
+}
+
+.dashboard-title h2 {
+  font-size: 20px;
+  padding: 1.5rem;
+}
+
+.form-field {
+  margin: 20px;
+}
+
+.form-label {
+  font-size: 1rem;
+  font-weight: 800px;
+}
+
+.form-field input {
+  padding: 7px;
+}
+
+.updateBtn {
+  margin-left: 27.5%;
+  position: fixed;
+  width: 10%;
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+}
+
+.updateBtn button:hover {
+  background-color: maroon;
+  color: white;
+}

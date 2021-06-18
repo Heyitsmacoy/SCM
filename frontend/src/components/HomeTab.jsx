@@ -1,10 +1,10 @@
 import React from "react";
+import SCM from "../images/SCM.jpg";
 
 export default function HomeTab() {
-
   return (
     <div>
-        <h1> This is the Home tab page</h1>
+      <img className="scmImg" src={SCM}></img>
     </div>
   );
 }

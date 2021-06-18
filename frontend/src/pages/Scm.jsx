@@ -10,6 +10,7 @@ import InvoicesTab from "../components/InvoicesTab";
 export default function Scm() {
   const [component, setComponent] = useState(0);
   const history = useHistory();
+
   return (
     <div className="Home">
       <div className="navbar">
@@ -42,9 +43,6 @@ export default function Scm() {
         <div className="productBtn">
           <button onClick={() => setComponent(4)} class="btn" type="submit">
             Add Contents
-          </button>
-          <button class="btn" type="submit">
-            Remove Contents
           </button>
         </div>
       </div>

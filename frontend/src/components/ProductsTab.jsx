@@ -59,7 +59,8 @@ export default function ProductsTabData() {
               if (searchTerm === "") {
                 return product;
               } else if (
-                product.productName
+                product.name.toLowerCase().includes(searchTerm.toLowerCase()) ||
+                product.category
                   .toLowerCase()
                   .includes(searchTerm.toLowerCase())
               ) {
@@ -69,27 +70,27 @@ export default function ProductsTabData() {
             .map((product, index) => (
               <div key={index} className="row">
                 <div className="column">
-                  <p>{product.productId}</p>
+                  <p>{product.description}</p>
                 </div>
                 <div className="column">
-                  <p>{product.productName}</p>
+                  <p>{product.name}</p>
                 </div>
                 <div className="column">
                   <p>{product.category}</p>
                 </div>
                 <div className="column">
-                  <p>{product.supplier}</p>
+                  <p>{product.brand}</p>
                 </div>
                 <div className="column">
                   <p>{product.price}</p>
                 </div>
                 <div className="column">
-                  <p>{product.quantity}</p>
+                  <p>{product.countInStock}</p>
                 </div>
                 <div className="column" id="action-padding">
                   <Link to={`/editproduct/${product._id}`}>
                     <button id="edit-button" className="outline-primary">
-                      edit
+                      Edit
                     </button>
                   </Link>
                   <button
@@ -99,7 +100,7 @@ export default function ProductsTabData() {
                       await axios.delete(`/api/products/${product._id}/delete`);
                     }}
                   >
-                    delete
+                    Delete
                   </button>
                 </div>
               </div>
