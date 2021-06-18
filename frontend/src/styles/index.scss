@@ -44,7 +44,6 @@ body,
 
 //.column{
 /*
-  padding: 1px;
   display: flex;
   flex-direction: column;
  */
@@ -329,9 +328,8 @@ label {
 }
 
 .updateBtn {
-  margin-left: 27.5%;
+  margin-left: 30%;
   position: fixed;
-  width: 10%;
   padding: 10px;
   display: flex;
   flex-direction: column;
@@ -341,4 +339,9 @@ label {
 .updateBtn button:hover {
   background-color: maroon;
   color: white;
+}
+
+#invoices-content{
+  display: flex;
+  flex-direction: column;
 }
