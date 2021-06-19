@@ -38,34 +38,34 @@ export default function ProductForm() {
   return (
     <div>
       <h2>{res && res.message}</h2>
-      <form onSubmit={handleSubmit}>
+      <form  className="form" onSubmit={handleSubmit}>
         <div>
-          <label>ID: </label>
-          <input type="text" name="description" onChange={handleChange} />
-        </div>
-        <div>
-          <label>Name: </label>
-          <input type="text" name="name" onChange={handleChange} />
+          <label className= "form-label" >ID: </label>
+          <input className="form-field" type="text" name="description" onChange={handleChange} />
         </div>
         <div>
-          <label>Category: </label>
-          <input type="text" name="category" onChange={handleChange} />
+          <label className= "form-label" >Name: </label>
+          <input  className="form-field"  type="text" name="name" onChange={handleChange} />
         </div>
         <div>
-          <label>Supplier: </label>
-          <input type="text" name="brand" onChange={handleChange} />
+          <label className= "form-label" >Category: </label>
+          <input   className="form-field"  type="text" name="category" onChange={handleChange} />
         </div>
         <div>
-          <label>Price: </label>
-          <input type="number" name="price" onChange={handleChange} />
+          <label className= "form-label" >Supplier: </label>
+          <input  className="form-field"  type="text" name="brand" onChange={handleChange} />
         </div>
         <div>
-          <label>Quantity: </label>
-          <input type="number" name="countInStock" onChange={handleChange} />
+          <label className= "form-label" >Price: </label>
+          <input   className="form-field" type="number" name="price" onChange={handleChange} />
         </div>
-        <div className="AddproductBtn">
-          <button type="submit">Add Product</button>
+        <div>
+          <label className= "form-label" >Quantity: </label>
+          <input   className="form-field" type="number" name="countInStock" onChange={handleChange} />
         </div>
+   
+          <button type="submit" className="AddproductBtn" >Add Product</button>
+      
       </form>
     </div>
   );

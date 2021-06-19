@@ -17,20 +17,22 @@ export default function Scm() {
         <div className="brandName">
           <h1> SUPPLY CHAIN MANAGEMENT </h1>
         </div>
-      </div>
+     
       <div className="tabs">
-        <button onClick={() => setComponent(0)} class="btn" type="submit">
+        
+        <button onClick={() => setComponent(0)} type="submit">
           Home
         </button>
-        <button onClick={() => setComponent(1)} class="btn" type="submit">
+        <button onClick={() => setComponent(1)}  type="submit">
           Products
         </button>
-        <button onClick={() => setComponent(2)} class="btn" type="submit">
+        <button onClick={() => setComponent(2)}  type="submit">
           Orders
         </button>
-        <button onClick={() => setComponent(3)} class="btn" type="submit">
+        <button onClick={() => setComponent(3)}  type="submit">
           Invoices
         </button>
+
         <button
           class="btn-logout"
           type="submit"
@@ -38,6 +40,7 @@ export default function Scm() {
         >
           Log-Out
         </button>
+      </div>
       </div>
       <div className="column">
         <div className="productBtn">

@@ -11,7 +11,7 @@ export default function Dashboard() {
   return (
     <div>
       <div>
-        <button onClick={() => setComponent(0)}>Add Product</button>
+        <button onClick={() => setComponent(0)}>Add PRODUCT</button>
         <button onClick={() => setComponent(1)}>Products</button>
         <button onClick={() => setComponent(2)}>Orders</button>
         <button onClick={() => setComponent(3)}>Invoices</button>

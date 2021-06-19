@@ -62,85 +62,85 @@ const ProductEditForm = ({ match }) => {
         <div className="admin-form">
           <form className="form" onSubmit={handleSubmit}>
             <div className="form-group">
-              <div className="form-field">
+              <div >
                 <label className="form-label">ID:</label>
                 <input
+                  className="form-field"
                   onChange={handleChange}
                   type="text"
                   name="productId"
-                  className="form-input"
                   value={values.description || ""}
                 />
                 {(errors.description || errors.message) && (
                   <pre>{errors.description || errors.message}</pre>
                 )}
               </div>
-              <div className="form-field">
+              <div >
                 <label className="form-label">Name:</label>
-                <input
+                <input className="form-field"
                   onChange={handleChange}
                   type="text"
                   name="productName"
-                  className="form-input"
                   value={values.name || ""}
                 />
                 {(errors.name || errors.message) && (
                   <pre>{errors.name || errors.message}</pre>
                 )}
               </div>
-              <div className="form-field">
+              <div >
                 <label className="form-label">Category:</label>
                 <input
+                  className="form-field"
                   onChange={handleChange}
                   type="text"
                   name="category"
-                  className="form-input"
+              
                   value={values.category || ""}
                 />
                 {(errors.category || errors.message) && (
                   <pre>{errors.category || errors.message}</pre>
                 )}
               </div>
-              <div className="form-field">
+              <div >
                 <label className="form-label">Supplier:</label>
                 <input
+                  className="form-field"
                   onChange={handleChange}
                   type="text"
                   name="supplier"
-                  className="form-input"
                   value={values.brand || ""}
                 />
                 {(errors.brand || errors.message) && (
                   <pre>{errors.brand || errors.message}</pre>
                 )}
               </div>
-              <div className="form-field">
+              <div >
                 <label className="form-label">Price:</label>
                 <input
+                  className="form-field"
                   onChange={handleChange}
                   type="text"
                   name="price"
-                  className="form-input"
                   value={values.price || ""}
                 />
                 {(errors.name || errors.message) && (
                   <pre>{errors.price || errors.message}</pre>
                 )}
               </div>
-              <div className="form-field">
+              <div >
                 <label className="form-label">Quantity:</label>
                 <input
+                  className="form-field"
                   onChange={handleChange}
                   type="number"
                   name="countInStock"
-                  className="form-input"
                   value={values.countInStock || ""}
                 />
                 {(errors.countInStock || errors.message) && (
                   <pre>{errors.countInStock || errors.message}</pre>
                 )}
               </div>
-              <div className="form-field">
+              <div >
                 <button
                   disabled={isSubmitting}
                   className="primary updateBtn"

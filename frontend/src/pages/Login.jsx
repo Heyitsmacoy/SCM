@@ -58,7 +58,7 @@ export default function Login() {
             onChange={handleChange}
           />
         </div>
-        <div className="center">
+        <div className="center login">
           <button type="submit">Login</button>
         </div>
       </form>

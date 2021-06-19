@@ -98,7 +98,7 @@ export default function ProductsTabData() {
                     </Link>
                     <button
                       id="delete-button"
-                      className="outline-primary"
+                   
                       onClick={async () => {
                         if (window.confirm("Are you sure")) {
                           await axios.delete(

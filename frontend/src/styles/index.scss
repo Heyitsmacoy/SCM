@@ -41,13 +41,13 @@ body,
   display: grid;
   place-items: center;
 }
-
-//.column{
 /*
+.column{
   display: flex;
   flex-direction: column;
- */
-//}
+  font-size: 15px;
+
+} */
 
 .loginForm {
   height: 80vh;
@@ -58,6 +58,17 @@ body,
   border-radius: 10px;
 }
 
+.login button{
+  padding: 5px;
+  width: 100px;
+  border: none;
+  background-color: rgb(34, 33, 33);
+  color: white;
+}
+
+.login button:hover{
+   background-color: #5a0e11;;
+}
 input {
   margin: 5px;
   margin-left: 10px;
@@ -68,11 +79,12 @@ input {
   place-items: center;
 }
 
-button {
+/* button {
   margin-bottom: 15px;
   padding: 0.4em 1.5em;
   border-radius: 5px;
 }
+*/
 
 button:hover {
   cursor: pointer;
@@ -83,54 +95,58 @@ label {
 }
 
 .AddproductBtn {
-  margin-left: 25%;
-  position: fixed;
-  padding: 5px;
-  display: flex;
-  flex-direction: column;
+ padding: 0.5rem;
+ margin-left: 36%;
+ margin-top: 5px;
 }
 
-.AddproductBtn button:hover {
-  background-color: maroon;
+
+.AddproductBtn:hover {
+  background-color:  #622427;
   color: white;
 }
 
 // Home Page //
 
 .navbar p {
-  font-size: 25px;
+  font-size: 20px;
 }
 
 .navbar h1 {
   font-size: 30px;
 }
-
+.brandName h1{
+  font-size: 25px;
+  font-weight: 150px;
+}
 .tabs {
   display: flex;
-  justify-content: flex-end;
-  background-color: rgb(255, 255, 255);
-  border-bottom: solid 1px black;
+  margin-left: 520px;
+  //background-color: rgb(255, 255, 255);
+ // border-bottom: solid 1px black;
 }
 
+
 .tabs button {
-  padding-top: 1em;
-  padding-bottom: 1em;
-  border-style: none;
-  font-size: 18px;
-  border-left: solid 0.5px black;
-  margin-bottom: 0px;
-  background-color: white;
+  background-color: #622427;
+  color: white;
+  border: none;
+  padding: 10px;
+}
+.tabs button:hover{
+ background-color: rgb(87, 83, 83);
+ 
 }
 
 .tabs .btn-logout,
 .btn-logout:focus {
-  margin-left: 100px;
-  background-color: rgb(51, 51, 51);
+
   color: whitesmoke;
+ 
 }
 
 .btn-logout:hover {
-  background-color: rgb(214, 93, 93);
+  background-color: rgb(185, 37, 37);
 }
 
 .btn:hover {
@@ -148,9 +164,10 @@ label {
 }
 
 .column button {
-  border-style: none;
-  border-bottom: solid 1px black;
+  border: none;
+  padding: 5px;
   cursor: pointer;
+  margin: 5px;
 }
 
 .contents {
@@ -182,13 +199,18 @@ label {
   left: 0;
   bottom: 0;
   padding: 10px;
-  height: 5%;
+  height: 8%;
   width: 100%;
   background-color: #622427;
   color: white;
   text-align: center;
 }
+.footer h3{
+  font-size: 15px;
+  font-weight: normal;
 
+  
+}
 .navbar {
   display: flex;
   background-color: #622427;
@@ -211,6 +233,7 @@ label {
   display: table;
   width: 100%;
   height: auto;
+  font-size: 15px;
   tr:nth-child(even) {
     background-color: #f2f2f2;
   }
@@ -224,22 +247,17 @@ label {
   .row {
     width: 100%;
     display: table-row;
-
     display: flex;
     justify-content: space-between;
-
     border: 1px solid white;
   }
 
   .column {
     width: 100%;
-
     display: table-cell;
-
     display: flex;
     align-items: center;
     justify-content: center;
-
     padding: 10px 5px;
 
     button {
@@ -250,12 +268,12 @@ label {
   }
 
   #edit-button:hover {
-    background-color: green;
+    background-color:rgb(119, 119, 119);
     color: white;
   }
 
   #delete-button:hover {
-    background-color: red;
+    background-color: #622427;
     color: white;
   }
 
@@ -271,6 +289,7 @@ label {
     justify-content: flex-end;
     align-items: center;
     margin-bottom: 2rem;
+    margin-right: 20px;
 
     input {
       margin-bottom: 5px;
@@ -289,8 +308,8 @@ label {
 }
 
 .ProductTabTitle {
-  margin: 50px 0px 0px 50px;
-  font-size: 40px;
+  margin: 25px 0px 0px 25px;
+  font-size: 30px;
 }
 
 // Home Page //
@@ -314,18 +333,26 @@ label {
   font-size: 20px;
   padding: 1.5rem;
 }
+.form{
+  margin-left: 50px;
+  margin-top: 20px;
+ 
 
+}
 .form-field {
-  margin: 20px;
+  margin: 5px;
+  height: 30px;
+  width: 60%px;
 }
 
 .form-label {
-  font-size: 1rem;
-  font-weight: 800px;
+  font-size: rem;
+  font-weight: normal;
+  margin: 0px;
 }
 
 .form-field input {
-  padding: 7px;
+  padding: 5px;
 }
 
 .updateBtn {
